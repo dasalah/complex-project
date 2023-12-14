@@ -2,7 +2,6 @@ using namespace std;
 #include<iomanip>
 #include<iostream>
 #include<cmath>
-#include<wchar.h>
 
 typedef struct {
 		// complex struct
@@ -27,7 +26,7 @@ void print(complex P) {
 
 
 
-static void polar(complex a) {
+void polar(complex a) { //polar
 
 	float r;
 	r = sqrt(pow(a.real, 2) + pow(a.imag, 2));
@@ -50,21 +49,21 @@ complex Division(complex A, complex B) { //division
 	return C;
 }
 
-void Add(complex c1, complex c2) {
+void Add(complex c1, complex c2) { //add
 	complex c3;
 	c3.real = c1.real + c2.real;
 	c3.imag = c1.imag + c2.imag;
 	print(c3);
 }
 
-void Minus(complex m1, complex m2) {
+void Minus(complex m1, complex m2) { //minus
 	complex m3;
 	m3.real = m1.real - m2.real;
 	m3.imag = m1.imag - m2.imag;
 	print(m3);
 }
 
-complex multyply(complex q, complex w) {
+complex multyply(complex q, complex w) { //multiplication
 	complex d4;
 	d4.real = (q.real * w.real) - (q.imag * w.imag);
 	d4.imag = (q.real * w.imag) + (q.imag * w.real);
