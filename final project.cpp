@@ -62,28 +62,18 @@ void Minus(complex m1, complex m2) {
 	m3.real = m1.real - m2.real;
 	m3.imag = m1.imag - m2.imag;
 	print(m3);
-	//cout << "result your minus:"<< m3.real << " + " << m3.imag << " i";
 }
-
-
 
 complex multyply(complex q, complex w) {
 	complex d4;
 	d4.real = (q.real * w.real) - (q.imag * w.imag);
 	d4.imag = (q.real * w.imag) + (q.imag * w.real);
 	print(d4);
-	//cout << "result your multiply" << d4.real << " + " << d4.imag << " i";
 	return d4;
 }
 
-
-// add //
-// div //
-// -
-// *
-
-
 int main() {
+	
 	char value;
 
 	complex a;
@@ -121,8 +111,5 @@ int main() {
 		polar(a);
 		break;
 	}
-
-
-
 
 }
