@@ -4,7 +4,7 @@ using namespace std;
 #include<cmath>
 
 typedef struct {
-		// complex struct
+	// complex struct
 	double real;
 	double imag;
 
@@ -17,6 +17,7 @@ void Minus(complex m1, complex m2);
 complex multyply(complex q, complex w);
 
 void print(complex P) {
+
 	cout << P.real;
 	if (P.imag != 0) {
 		if (P.imag > 0) cout << "+";
@@ -35,15 +36,15 @@ void polar(complex a) { //polar
 	float teta;
 	y = a.imag / a.real;
 	e = atan(y);
-	teta = atan(y)*180/ 3.14159265;
-	cout << "z = " << r << "e^(" << teta << ")";
-	
+	teta = atan(y) * 180 / 3.14159265;
+	cout << "z = " << r << "e^(" << teta << ")i" ;
+
 }
 
 
 complex Division(complex A, complex B) { //division
 	complex C;
-	C.real = A.real/ pow(A.imag, 2) + pow(B.imag, 2);
+	C.real = A.real / pow(A.imag, 2) + pow(B.imag, 2);
 	C.imag = B.real / pow(A.imag, 2) + pow(B.imag, 2);
 	print(C);
 	return C;
@@ -72,43 +73,52 @@ complex multyply(complex q, complex w) { //multiplication
 }
 
 int main() {
-	
+
 	char value;
 
 	complex a;
+	complex b;
 	cout << "enter real number complex1: ";
 	cin >> a.real;
-	
+
 	cout << "enter imag number complex1: ";
 	cin >> a.imag;
 	cout << "enter your operation:";
 	cin >> value;
-	complex b;
-	cout << "enter real number complex2: ";
-	cin >> b.real;
-	cout << "enter imag number complex2: ";
-	cin >> b.imag;
-	
-	switch (value) {
-
-	case '+'  :
-		Add(a, b);
-		break;
-
-	case '-':
-		Minus(a, b);
-		break;
-
-	case '*':
-		multyply(a, b);
-		break;
-
-	case'/':
-		Division(a, b);
-		break;
-	case'^':
+	if (value == '^') 
 		polar(a);
-		break;
-	}
+	else
+	{
 
+
+		cout << "enter real number complex2: ";
+		cin >> b.real;
+		cout << "enter imag number complex2: ";
+		cin >> b.imag;
+
+
+
+
+		switch (value) {
+
+		case '+':
+			Add(a, b);
+			break;
+
+		case '-':
+			Minus(a, b);
+			break;
+
+		case '*':
+			multyply(a, b);
+			break;
+
+		case'/':
+			Division(a, b);
+			break;
+		default:
+			cout << "your operator invlaid.";
+			break;
+		}
+	}
 }
